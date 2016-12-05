@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+
+    <script type="text/javascript">
+
+        function CreateWindowsMediaPlayerObj(fpass, width, height, f_controll, f_auto, f_status) {
+            //参考⇒ http://phpjavascriptroom.com/?t=strm&p=41
+            htm = "";
+            if (f_controll == "true") {
+                height = eval(height + 45);
+            }
+            if (f_status == "true") {
+                height = eval(height + 24);
+            }
+            //EMBED TAG
+            htm += "<embed name='WMP' ";
+            //htm += " type='application/x-mplayer2'";
+            htm += " src='" + fpass + "'";
+            htm += " width='" + width + "' height='" + height + "'";
+            htm += " showcontrols='" + ((f_controll == "true") ? 1 : 0) + "'";
+            htm += " autostart='" + ((f_auto == "true") ? 1 : 0) + "'";
+            htm += " showstatusbar='" + ((f_status == "true") ? 1 : 0) + "'>\n";
+            htm += "</embed>\n";
+            //document.write(htm);
+
+            var myIframe = document.getElementById("mp3test");
+            myIframe.contentWindow.document.open();
+            myIframe.contentWindow.document.write(htm);
+            myIframe.contentWindow.document.close();
+        }
+
+
+    </script>
+
+
+</head>
+<body>
+    <input id="Button1" type="button" value="button"
+           onclick="CreateWindowsMediaPlayerObj('Audio/lamb.mp3', '10', '10', 'false', 'false', 'false')" />
+
+    <input id="Button1" type="button" value="button" onclick="" />
+
+
+
+    <!-- DL場所：http://taira-komori.jpn.org/acoustica.html -->
+    <audio src="Audio/lamb.mp3" controls></audio>
+
+    <!-- embedについて：http://www.htmq.com/html/embed.shtml -->
+    <embed src="Audio/lamb.mp3" />
+
+
+    <iframe id="mp3test" src="HtmlPage2.html"></iframe>
+
+</body>
+
+
+
+</html>
+
