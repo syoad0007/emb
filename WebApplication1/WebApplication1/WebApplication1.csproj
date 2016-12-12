@@ -66,6 +66,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HtmlPage_Audio2.html" />
+    <Content Include="HtmlPage_BGSOUND_Frame.html" />
+    <Content Include="HtmlPage_Embed.html" />
+    <Content Include="HtmlPage_WebStorage.html" />
+    <Content Include="HtmlPage_WebWorker.html" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -75,12 +80,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HtmlPage1.html" />
-    <Content Include="HtmlPage2.html" />
+    <Content Include="HtmlPage_Audio.html" />
+    <Content Include="HtmlPage_BGSOUND.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Audio\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

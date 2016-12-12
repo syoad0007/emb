@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=5" />
+    <title></title>
+	<meta charset="utf-8" />
+
+    <script type="text/javascript">
+
+
+        function CanUseWebStorage() {
+            if (('sessionStorage' in window) && (window.sessionStorage !== null)) {
+                // セッションストレージが使える
+                alert("セッションストレージ使用可能！！！");
+
+            } else {
+                // 使えない
+                alert("本ブラウザではSession Storageが使えません");
+            }
+        }
+
+        function SetStorage() {
+            var str = document.getElementById("Text1").value;
+            // データの保存
+            sessionStorage.str = str;
+        }
+
+
+        function GetStorage() {
+            var str = sessionStorage.str;
+            alert(str);
+        }
+    </script>
+
+</head>
+<body>
+    <input id="Button1" type="button" value="WebStorage" onclick="CanUseWebStorage();" />
+    <input id="Button2" type="button" value="SetStorage" onclick="SetStorage();" />
+    <input id="Button3" type="button" value="GetStorage" onclick="GetStorage();" />
+    
+    <br>
+    <input id="Text1" type="text" />
+
+</body>
+</html>

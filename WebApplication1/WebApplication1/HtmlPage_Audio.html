@@ -7,23 +7,19 @@
 
     <script type="text/javascript">
 
-        function CreateWindowsMediaPlayerObj(fpass, width, height, f_controll, f_auto, f_status) {
+
+        function PlayMp3(fpass) {
             //参考⇒ http://phpjavascriptroom.com/?t=strm&p=41
             htm = "";
-            if (f_controll == "true") {
-                height = eval(height + 45);
-            }
-            if (f_status == "true") {
-                height = eval(height + 24);
-            }
             //EMBED TAG
             htm += "<embed name='WMP' ";
             //htm += " type='application/x-mplayer2'";
             htm += " src='" + fpass + "'";
-            htm += " width='" + width + "' height='" + height + "'";
-            htm += " showcontrols='" + ((f_controll == "true") ? 1 : 0) + "'";
-            htm += " autostart='" + ((f_auto == "true") ? 1 : 0) + "'";
-            htm += " showstatusbar='" + ((f_status == "true") ? 1 : 0) + "'>\n";
+            htm += " width='10' height='10'";
+            htm += " showcontrols='1'";
+            htm += " autostart='1'";
+            htm += " loop='1'";
+            htm += " showstatusbar='1'>\n";
             htm += "</embed>\n";
             //document.write(htm);
 
@@ -39,18 +35,16 @@
 
 </head>
 <body>
-    <input id="Button1" type="button" value="button"
-           onclick="CreateWindowsMediaPlayerObj('Audio/lamb.mp3', '10', '10', 'false', 'false', 'false')" />
 
-    <input id="Button1" type="button" value="button" onclick="" />
-
+    <input id="Button2" type="button" value="音声再生"
+           onclick="PlayMp3('Audio/test.m3u')" />
 
 
     <!-- DL場所：http://taira-komori.jpn.org/acoustica.html -->
-    <audio src="Audio/lamb.mp3" controls></audio>
+    <!--<audio src="Audio/lamb.mp3" controls></audio>-->
 
     <!-- embedについて：http://www.htmq.com/html/embed.shtml -->
-    <embed src="Audio/lamb.mp3" />
+    <!--<embed src="Audio/lamb.mp3" />-->
 
 
     <iframe id="mp3test" src="HtmlPage2.html"></iframe>
